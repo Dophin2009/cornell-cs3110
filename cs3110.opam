@@ -1,0 +1,15 @@
+opam-version: "2.0"
+synopsis: "Cornell CS3110 book exercises."
+version: "1.0"
+maintainer: "21zhaoe@protonmail.com"
+authors: ["Eric Zhao"]
+homepage: "https://github.com/Dophin2009/cornell-cs3110"
+bug-reports: "https://github.com/Dophin2009/cornell-cs3110/issues"
+dev-repo: "https://github.com/Dophin2009/cornell-cs3110.git"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "dune" { >= "2.0" }
+  "ocamlformat" { = "0.18" }
+]
