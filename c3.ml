@@ -225,3 +225,44 @@ let depth tree =
         Stdlib.max (helper (depth + 1) left) (helper (depth + 1) right)
   in
   helper 0 tree
+
+(* shape *)
+let rec shape t1 t2 =
+  match (t1, t2) with
+  | Leaf, Leaf -> true
+  | Node _, Leaf | Leaf, Node _ -> false
+  | Node (_, l1, r1), Node (_, l2, r2) -> shape l1 l2 && shape r1 r2
+
+(* list max exn *)
+let list_max = function
+  | [] -> raise (Failure "list_max")
+  | lst ->
+      let rec h max = function
+        | [] -> max
+        | hd :: tl -> if hd > max then h hd tl else h max tl
+      in
+      h min_int lst
+
+(* list max exn string *)
+let list_max_string = function
+  | [] -> "empty"
+  | lst ->
+      let rec h max = function
+        | [] -> max
+        | hd :: tl -> if hd > max then h hd tl else h max tl
+      in
+      string_of_int (h min_int lst)
+
+(* is_bst *)
+
+(* quadrant poly *)
+let sign_poly x = if x < 0 then `Neg else if x > 0 then `Pos else `Zero
+
+let quadrant = function
+  | x, y -> (
+      match (sign x, sign y) with
+      | Pos, Pos -> Some `I
+      | Pos, Neg -> Some `II
+      | Neg, Neg -> Some `III
+      | Neg, Pos -> Some `IV
+      | _ -> None)
