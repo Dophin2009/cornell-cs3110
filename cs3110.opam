@@ -3,9 +3,9 @@ synopsis: "Cornell CS3110 book exercises"
 version: "1.0"
 maintainer: "21zhaoe@protonmail.com"
 authors: ["Eric Zhao"]
-homepage: "https://github.com/Dophin2009/cornell-cs3110"
-bug-reports: "https://github.com/Dophin2009/cornell-cs3110/issues"
-dev-repo: "git+https://github.com/Dophin2009/cornell-cs3110.git"
+homepage: "https://github.com/mirryi/cornell-cs3110"
+bug-reports: "https://github.com/mirryi/cornell-cs3110/issues"
+dev-repo: "git+https://github.com/mirryi/cornell-cs3110.git"
 build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
